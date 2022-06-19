@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DoctorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('admin')->group(function (){
+    Route::get('/test/{name}/{number?}', function ($name, $number=333) {
+        return "Hi you beautiful " . $name . " -- " . $number;
+    })->name('testRoute');
+});
+
+// kontroler Doctors, metoda index
+Route::get('doctors/',[DoctorController::class, 'powitanie']);
+
+
