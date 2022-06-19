@@ -16,6 +16,6 @@ class DoctorController extends Controller
 
         return view('doctors.list',['doctorList' => $doctorList,
                                         'footerYear' => date("Y"),
-                                        'title' => 'Doctors module']);
+                                        'title' => '- Doctors module']);
     }
 }
