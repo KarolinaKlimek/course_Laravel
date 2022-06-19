@@ -14,6 +14,8 @@ class DoctorController extends Controller
             ["id"=>3, "lastname"=>"House", "firstname"=>"Gregory", "email"=>"gre@n.com","phone"=>"990887654","address"=>"Adres 3", "status" => "Niedostepny"],
         ];
 
-        return view('doctors.list',['doctorList'=>$doctorList]);
+        return view('doctors.list',['doctorList' => $doctorList,
+                                        'footerYear' => date("Y"),
+                                        'title' => 'Doctors module']);
     }
 }
